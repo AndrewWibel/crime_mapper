@@ -2,6 +2,7 @@ html,body {
 				height : 100%;
 				margin: 0;
 				padding: 0;
+				background-color: black;
 }
 #map {
 	height: 500px;
@@ -14,12 +15,13 @@ button	{
 .infoWindowContent {
 	color: red;
 }
-/*#header {
-	margin: 10px;
+#header {
+
+
 }
 #views {
 	margin: 10px;
 }
-h1 {
-	color: blue;
-}*/
+h2 {
+	margin: 10px;
+}

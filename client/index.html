@@ -2,8 +2,17 @@
 <html ng-app='crime_data'>
 <head>
 	<title>vig.i.lance</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
 
 	<link rel="stylesheet" type="text/css" href="./static/crimes.css">
+	<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+
+<!-- Optional theme -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
+
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
 
 	
 	<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBjIt2MAa-4SjwPMP5zCWYYvBuukwR-2dc"></script>
@@ -16,19 +25,28 @@
 </head>
 <body>
 <div id='header'>
-	<h1>vig.i.lance</h1>
-	<div id='links'>
-		<h3>Select a City</h3>
-		<button><a href="#/san_francisco">San Francisco</a></button>
-		<button><a href="#/los_angeles">Los Angeles</a></button>
-		<button><a href="#/new_orleans">New Orleans</a></button>
-		<button><a href="#/miami">Miami</a></button>
+<nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="#/">
+        vig.i.lance
+      </a>
+		<a href="#/san_francisco" type='button' class="btn btn-default navbar-btn">San Francisco</a>
+		<a href="#/los_angeles" type='button' class="btn btn-default navbar-btn">Los Angeles</a>
+		<a href="#/new_orleans" type='button' class="btn btn-default navbar-btn">New Orleans</a>
+		<a href="#/miami" type='button' class="btn btn-default navbar-btn">Miami</a>
 
+    </div>
+  </div>
+</nav>
+	<div id='links'>
+		<h2>Select a City</h2>
+		
 	</div>
 	<hr>
 </div>
 
-<div ng-view=''></div>
+<div id='views' ng-view=''></div>
 
 </body>
 </html>
