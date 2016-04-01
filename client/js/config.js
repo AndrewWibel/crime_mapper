@@ -81,6 +81,18 @@ crime_data.controller('sfcrimesController', function(sfcrimeFactory, $scope){
 	}
     $scope.map = new google.maps.Map(document.getElementById('map'), mapOptions);
 
+    google.maps.event.addListener($scope.map, 'click', function(event){
+		placeMarker(event.latLng, map);
+	});
+	function placeMarker(position, map){
+		var marker = new google.maps.Marker({
+			position: position,
+			map: $scope.map
+		});
+		// marker.content = '<div class="infoWindowContent">' + This location + '</div>';
+
+	}
+
     $scope.markers = [];
 
     var infoWindow = new google.maps.InfoWindow();
@@ -135,6 +147,18 @@ crime_data.controller('miamicrimesController', function(miamicrimeFactory, $scop
 		mapTypeId: google.maps.MapTypeId.ROADMAP
 	}
     $scope.map = new google.maps.Map(document.getElementById('map'), mapOptions);
+
+    google.maps.event.addListener($scope.map, 'click', function(event){
+		placeMarker(event.latLng, map);
+	});
+	function placeMarker(position, map){
+		var marker = new google.maps.Marker({
+			position: position,
+			map: $scope.map
+		});
+		// marker.content = '<div class="infoWindowContent">' + This location + '</div>';
+
+	}
 
     $scope.markers = [];
 
@@ -191,6 +215,18 @@ crime_data.controller('lacrimesController', function(lacrimeFactory, $scope){
 	}
     $scope.map = new google.maps.Map(document.getElementById('map'), mapOptions);
 
+	google.maps.event.addListener($scope.map, 'click', function(event){
+		placeMarker(event.latLng, map);
+	});
+	function placeMarker(position, map){
+		var marker = new google.maps.Marker({
+			position: position,
+			map: $scope.map
+		});
+		// marker.content = '<div class="infoWindowContent">' + This location + '</div>';
+
+	}
+
     $scope.markers = [];
 
     var infoWindow = new google.maps.InfoWindow();
@@ -232,12 +268,7 @@ crime_data.controller('lacrimesController', function(lacrimeFactory, $scope){
 //////////---------new orleans-----/////////////////
 crime_data.controller('nocrimesController', function(nocrimeFactory, $scope){
 
-	$scope.get_position = function(){
-		$scope.position = $scope.new_position;
-		console.log($scope.position);
-		$scope.map.center = $scope.position;
-		console.log(google.maps.Map);
-	}
+
 
 	var mapOptions = {
 		zoom: 13,
@@ -245,6 +276,18 @@ crime_data.controller('nocrimesController', function(nocrimeFactory, $scope){
 		mapTypeId: google.maps.MapTypeId.ROADMAP
 	}
     $scope.map = new google.maps.Map(document.getElementById('map'), mapOptions);
+
+	google.maps.event.addListener($scope.map, 'click', function(event){
+		placeMarker(event.latLng, map);
+	});
+	function placeMarker(position, map){
+		var marker = new google.maps.Marker({
+			position: position,
+			map: $scope.map
+		});
+		// marker.content = '<div class="infoWindowContent">' + This location + '</div>';
+
+	}
 
     $scope.markers = [];
 
@@ -268,6 +311,13 @@ crime_data.controller('nocrimesController', function(nocrimeFactory, $scope){
 	    	});
 	    	marker.content = '<div class="infoWindowContent">' + info.description + '<br />' + info.datetime + '</div>';
 
+	    	var str = info.description;
+	    	// console.log(str.includes("THEFT"));
+	    	// if(str.includes("THEFT"){
+	    	// 	marker.category = THEFT;
+	    	// })
+	    	
+	    	// console.log($scope.markers);
 	    	google.maps.event.addListener(marker, 'click', function(){
 	    		infoWindow.setContent('<h2>' + marker.content + '</h2>');
 	    		infoWindow.open($scope.map, marker);
