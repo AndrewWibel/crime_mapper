@@ -1,0 +1,25 @@
+html,body {
+				height : 100%;
+				margin: 0;
+				padding: 0;
+}
+#map {
+	height: 500px;
+	margin: 10px;
+}
+
+button	{
+	color: blue;
+}
+.infoWindowContent {
+	color: red;
+}
+/*#header {
+	margin: 10px;
+}
+#views {
+	margin: 10px;
+}
+h1 {
+	color: blue;
+}*/

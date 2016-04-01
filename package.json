@@ -1,0 +1,8 @@
+{
+  "dependencies": {
+    "body-parser": "latest",
+    "express": "^4.13.3",
+    "mongoose": "^4.3.6",
+    "unirest": "^0.4.2"
+  }
+}
